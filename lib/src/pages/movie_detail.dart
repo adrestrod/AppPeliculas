@@ -133,6 +133,7 @@ class MovieDetailPage extends StatelessWidget {
     return SizedBox(
       height: 250.0,
       child: PageView.builder(
+        pageSnapping: false,
         controller: PageController(
           viewportFraction: 0.3,
           initialPage: 1,
@@ -145,12 +146,14 @@ class MovieDetailPage extends StatelessWidget {
 
   Widget _actorTarjeta(BuildContext context, Actor actor) {
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: 2.0),
       child: Column(children: [
+        
         ClipRRect(
           borderRadius: BorderRadius.circular(20.0),
           child: FadeInImage(
-              placeholder: AssetImage('assets/img/no-image.jpg'),
-              image: NetworkImage(actor.getFoto())),
+            placeholder: AssetImage('assets/img/no-image.jpg'),
+            image: NetworkImage(actor.getFoto())),
         ),
         Text(
           actor.name,
