@@ -12,6 +12,9 @@ class Peliculas {
 
 
 class Pelicula {
+
+  String uniqueID;
+
   bool adult;
   String backdropPath;
   List<int> genreIds;
@@ -68,6 +71,13 @@ class Pelicula {
       return 'https://kinepolisempresas.com/sala/uploads/2018/03/not-available-es.png';
     } else {
       return 'https://www.themoviedb.org/t/p/w1280/$posterPath';
+    }
+  }
+  getBackgroundImg(){
+    if (posterPath == null) {
+      return 'https://kinepolisempresas.com/sala/uploads/2018/03/not-available-es.png';
+    } else {
+      return 'https://www.themoviedb.org/t/p/w1280/$backdropPath';
     }
   }
 
